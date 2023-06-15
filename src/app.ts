@@ -1,6 +1,7 @@
 import cors from 'cors'
 import express, { Application, NextFunction, Request, Response } from 'express'
 import httpStatus from 'http-status'
+import globalErrorHandler from './app/middleware/globalerrorhandler'
 import router from './app/route/route'
 
 export const app: Application = express()
@@ -33,11 +34,4 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next()
 })
 
-// app.use(globalErrorHandler)
-
-function COMPUTER() {
-  console.log(
-    'Computer Science is no more about Computers than astronomy is about telescopes'
-  )
-}
-COMPUTER()
+app.use(globalErrorHandler)

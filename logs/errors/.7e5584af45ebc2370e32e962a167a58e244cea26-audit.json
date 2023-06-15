@@ -14,6 +14,11 @@
             "date": 1686845273897,
             "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-15-22-error.log",
             "hash": "47b4037613fd4dbfec9a5764d62437fd01baf2e0be9354917f55dcc73c73657b"
+        },
+        {
+            "date": 1686849586714,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-15-23-error.log",
+            "hash": "2cdcb7c7a89fbd9c1ef71de17e84b79b92ac48e78696c5fe6cc9d5651dda94ae"
         }
     ],
     "hashType": "sha256"
