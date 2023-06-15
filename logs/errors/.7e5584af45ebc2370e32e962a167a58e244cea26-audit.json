@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\.7e5584af45ebc2370e32e962a167a58e244cea26-audit.json",
+    "files": [
+        {
+            "date": 1686842568949,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-15-21-error.log",
+            "hash": "30e084da2e70700683cda5387765a3f0b89757d1cafda6819e515275f0dbd5b0"
+        },
+        {
+            "date": 1686845273897,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-15-22-error.log",
+            "hash": "47b4037613fd4dbfec9a5764d62437fd01baf2e0be9354917f55dcc73c73657b"
+        }
+    ],
+    "hashType": "sha256"
+}
