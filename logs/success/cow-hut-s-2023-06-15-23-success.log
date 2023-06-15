@@ -34,3 +34,27 @@
   timestamp: '2023-06-15T17:22:39.434Z',
   label: 'COW'
 }
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-15T17:24:19.354Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-15T17:24:19.358Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-15T17:24:52.450Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-15T17:24:52.454Z',
+  label: 'COW'
+}
