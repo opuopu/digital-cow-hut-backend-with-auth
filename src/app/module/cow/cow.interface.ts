@@ -14,4 +14,11 @@ export type ICow = {
   seller: Types.ObjectId | IUser // Assuming the reference ID is of type string
 }
 
+export type IcowsFilters = {
+  searchTerm?: 'location' | 'bread' | 'category'
+  minPrice?: number
+  maxPrice?: number
+  location?: string
+}
+
 export type cowModel = Model<ICow, object>

@@ -1,4 +1,6 @@
 import httpStatus from 'http-status'
+import { SortOrder } from 'mongoose'
+import calculatePagination from '../../../shared/paginationHelper'
 import Apierror from '../../errors/handleapiError'
 import { ICow } from './cow.interface'
 import cow from './cow.model'
@@ -12,9 +14,58 @@ const createAcow = async (cows: ICow): Promise<ICow | null> => {
 }
 
 //   get all cows
-const getAllcows = async (): Promise<ICow[] | null> => {
-  const result = await cow.find({}).populate('seller')
-  return result
+type meta = {
+  page: number
+  limit: number
+}
+const getAllcows = async (
+  filters: any,
+  paginationOptions: any
+): Promise<{ meta: meta; data: ICow[] | null }> => {
+  const { page, limit, skip, sortOrder, sortBy } =
+    calculatePagination(paginationOptions)
+  const filter: any = {}
+  const { searchTerm, ...fields } = filters
+  console.log(fields, 'dodo')
+  if (fields.minPrice) {
+    filter.price = { $gte: Number(fields.minPrice) }
+  }
+
+  if (fields.maxPrice) {
+    filter.price = {
+      ...filter.price,
+      $lte: Number(fields.maxPrice),
+    }
+  }
+  if (fields.location) {
+    filter.location = { $regex: fields.location, $options: 'i' }
+  }
+
+  const sort: { [key: string]: SortOrder } = {}
+  if (sortBy && sortOrder) {
+    sort[sortBy] = sortOrder
+  }
+
+  if (searchTerm) {
+    filter.$or = [
+      { location: { $regex: searchTerm, $options: 'i' } },
+      { breed: { $regex: searchTerm, $options: 'i' } },
+      { category: { $regex: searchTerm, $options: 'i' } },
+    ]
+  }
+  const result = await cow
+    .find(filter)
+    .sort(sort)
+    .skip(skip)
+    .limit(limit)
+    .populate('seller')
+  return {
+    meta: {
+      page: page,
+      limit: limit,
+    },
+    data: result,
+  }
 }
 
 //   get single cows

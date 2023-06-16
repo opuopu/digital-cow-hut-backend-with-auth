@@ -1,0 +1,216 @@
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:00:04.358Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:00:04.368Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:02:22.181Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:02:22.187Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:02:42.613Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:02:42.620Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:02:48.110Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:02:48.119Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:03:22.692Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:03:22.701Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:03:43.529Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:03:43.536Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:04:11.917Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:04:11.928Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:05:15.283Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:05:15.295Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:05:56.465Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:05:56.475Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:06:40.615Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:06:40.620Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:06:47.180Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:06:47.188Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:07:15.075Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:07:15.087Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:07:28.895Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:07:28.907Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:08:10.454Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:08:10.462Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:10:27.636Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:10:27.644Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:12:52.088Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:12:52.094Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:14:49.195Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:14:49.203Z',
+  label: 'COW'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-16T17:15:09.793Z',
+  label: 'COW'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-16T17:15:09.801Z',
+  label: 'COW'
+}
