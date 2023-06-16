@@ -22,21 +22,23 @@ const userSchema = new Schema<IUser, UserModel>({
   budget: {
     type: Number,
     required: true,
+    default: 0,
   },
   income: {
     type: Number,
     required: true,
+    default: 0,
   },
 })
 
-userSchema.pre<IUser>('save', function (next) {
-  if (this.role === 'buyer') {
-    this.income = 0
-  } else if (this.role === 'seller') {
-    this.budget = 0
-  }
-  next()
-})
+// userSchema.pre<IUser>('save', function (next) {
+//   if (this.role === 'buyer') {
+//     this.income = 0
+//   } else if (this.role === 'seller') {
+//     this.budget = 0
+//   }
+//   next()
+// })
 
 const user = model<IUser, UserModel>('user', userSchema)
 export default user

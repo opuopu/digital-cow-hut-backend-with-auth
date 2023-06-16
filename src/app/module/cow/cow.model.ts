@@ -16,13 +16,13 @@ const cowSchema = new Schema<ICow, cowModel>(
       default: 'for sale',
     },
     category: { type: String, required: true },
-    seller: { type: Schema.Types.ObjectId, ref: 'seller', required: true },
+    seller: { type: Schema.Types.ObjectId, ref: 'user', required: true },
   },
   {
     timestamps: true,
   }
 )
 
-const cowmodel = mongoose.model<ICow, cowModel>('cow', cowSchema)
+const cow = mongoose.model<ICow, cowModel>('cow', cowSchema)
 
-export default cowmodel
+export default cow

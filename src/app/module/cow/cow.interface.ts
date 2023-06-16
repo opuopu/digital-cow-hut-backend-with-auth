@@ -10,7 +10,7 @@ export type ICow = {
   breed: bread
   weight: number
   label: 'for sale' | 'sold out'
-  category: 'Dairy' | 'Beef' | 'DualPurpose '
+  category: 'Dairy' | 'Beef' | 'DualPurpose'
   seller: Types.ObjectId | IUser // Assuming the reference ID is of type string
 }
 
