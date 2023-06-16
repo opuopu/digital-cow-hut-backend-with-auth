@@ -1,55 +1,55 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 1
+  "keep": {
+    "days": true,
+    "amount": 1
+  },
+  "auditLog": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\.3fea548a261106bc222c9de39aaaeb611bbcde8e-audit.json",
+  "files": [
+    {
+      "date": 1686849586708,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-15-23-success.log",
+      "hash": "853cc4657ca82b55c16fba3de37f50eb6bbc8ce4baa6bcd94cec1bebc0811f92"
     },
-    "auditLog": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\.3fea548a261106bc222c9de39aaaeb611bbcde8e-audit.json",
-    "files": [
-        {
-            "date": 1686849586708,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-15-23-success.log",
-            "hash": "853cc4657ca82b55c16fba3de37f50eb6bbc8ce4baa6bcd94cec1bebc0811f92"
-        },
-        {
-            "date": 1686909376853,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-15-success.log",
-            "hash": "712d8a06e357024d1862417ae53bf44fed7286f3a48c6531aed05d77284c0ed0"
-        },
-        {
-            "date": 1686909628953,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-16-success.log",
-            "hash": "1158de32340676bccf144571223b183f81508f9480744764e11a6bafe61aa32d"
-        },
-        {
-            "date": 1686913238071,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-17-success.log",
-            "hash": "15e0a3a3e21ffeeef741aefb103cdb0a625beff04a543b33a481686279979417"
-        },
-        {
-            "date": 1686921054945,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-19-success.log",
-            "hash": "0a0cdceea98e4a29dbbb3728e5416fe7b0432c7e24c384a1465c815a6e97f81b"
-        },
-        {
-            "date": 1686925012299,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-20-success.log",
-            "hash": "c4beb527736817d0c21843b57e452c2c97751408310a75f2ff297519aa0ce34f"
-        },
-        {
-            "date": 1686927653668,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-21-success.log",
-            "hash": "987a416fe38ccdd839af784faff34d65c7436c67c5cb54b6f4154def874b6f0c"
-        },
-        {
-            "date": 1686931245109,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-22-success.log",
-            "hash": "f01e342c052da79a79f91cb37ff27d4a7da374826844b5004a6bc054b300a1c8"
-        },
-        {
-            "date": 1686934801039,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-23-success.log",
-            "hash": "201a369bc23ecec4088cf2bc7fd2944c9e6a0ade5d2fe46857cc2df6022546ec"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1686909376853,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-15-success.log",
+      "hash": "712d8a06e357024d1862417ae53bf44fed7286f3a48c6531aed05d77284c0ed0"
+    },
+    {
+      "date": 1686909628953,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-16-success.log",
+      "hash": "1158de32340676bccf144571223b183f81508f9480744764e11a6bafe61aa32d"
+    },
+    {
+      "date": 1686913238071,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-17-success.log",
+      "hash": "15e0a3a3e21ffeeef741aefb103cdb0a625beff04a543b33a481686279979417"
+    },
+    {
+      "date": 1686921054945,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-19-success.log",
+      "hash": "0a0cdceea98e4a29dbbb3728e5416fe7b0432c7e24c384a1465c815a6e97f81b"
+    },
+    {
+      "date": 1686925012299,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-20-success.log",
+      "hash": "c4beb527736817d0c21843b57e452c2c97751408310a75f2ff297519aa0ce34f"
+    },
+    {
+      "date": 1686927653668,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-21-success.log",
+      "hash": "987a416fe38ccdd839af784faff34d65c7436c67c5cb54b6f4154def874b6f0c"
+    },
+    {
+      "date": 1686931245109,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-22-success.log",
+      "hash": "f01e342c052da79a79f91cb37ff27d4a7da374826844b5004a6bc054b300a1c8"
+    },
+    {
+      "date": 1686934801039,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-23-success.log",
+      "hash": "201a369bc23ecec4088cf2bc7fd2944c9e6a0ade5d2fe46857cc2df6022546ec"
+    }
+  ],
+  "hashType": "sha256"
 }

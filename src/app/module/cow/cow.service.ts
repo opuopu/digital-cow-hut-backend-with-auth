@@ -25,8 +25,9 @@ const getAllcows = async (
   const { page, limit, skip, sortOrder, sortBy } =
     calculatePagination(paginationOptions)
   const filter: any = {}
+  console.log(filters)
   const { searchTerm, ...fields } = filters
-  console.log(fields, 'dodo')
+
   if (fields.minPrice) {
     filter.price = { $gte: Number(fields.minPrice) }
   }
@@ -45,14 +46,16 @@ const getAllcows = async (
   if (sortBy && sortOrder) {
     sort[sortBy] = sortOrder
   }
+  const filterableFieldss = ['location', 'category', 'breed']
 
   if (searchTerm) {
-    filter.$or = [
-      { location: { $regex: searchTerm, $options: 'i' } },
-      { breed: { $regex: searchTerm, $options: 'i' } },
-      { category: { $regex: searchTerm, $options: 'i' } },
-    ]
+    filterableFieldss.map(field => {
+      filter.$or = filter.$or || []
+
+      filter.$or.push({ [field]: { $regex: searchTerm, $options: 'i' } })
+    })
   }
+
   const result = await cow
     .find(filter)
     .sort(sort)

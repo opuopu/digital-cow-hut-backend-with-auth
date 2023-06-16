@@ -28,12 +28,6 @@ export type bread =
   | 'Tharparkar'
   | ' Kankrej'
 
-export const studentFilterableFields = [
-  'searchTerm',
-  'minPrice',
-  'maxPrice',
-  'location',
-]
 export const items = ['page', 'limit', 'sortBy', 'sortOrder']
 
 export const filterableField = [
