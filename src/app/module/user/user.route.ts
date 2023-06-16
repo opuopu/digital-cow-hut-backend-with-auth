@@ -3,7 +3,6 @@ import UserController from './user.controller'
 
 const router = express.Router()
 
-router.post('/', UserController.createuser)
 router.get('/', UserController.getalluser)
 router.get('/:id', UserController.getsingleuser)
 router.delete('/:id', UserController.deleteuser)

@@ -1,5 +1,6 @@
 import express from 'express'
 
+import AuthRoute from '../module/auth/auth.route'
 import cowsRoute from '../module/cow/cow.route'
 import { userRoute } from '../module/user/user.route'
 const router = express.Router()
@@ -7,7 +8,7 @@ const router = express.Router()
 const moduleRoute: any[] = [
   {
     path: '/auth/signup',
-    route: userRoute,
+    route: AuthRoute,
   },
   {
     path: '/users',

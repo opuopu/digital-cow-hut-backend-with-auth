@@ -2,16 +2,6 @@ import { Request, Response } from 'express'
 import catchAsync from '../../../shared/catchasync'
 import userService from './user.service'
 
-const createuser = catchAsync(async (req: Request, res: Response) => {
-  const result = await userService.createAuser(req.body)
-  res.send({
-    success: true,
-    statusCode: 200,
-    message: 'Users created successfully',
-    data: result,
-  })
-})
-
 // get all
 const getalluser = catchAsync(async (req: Request, res: Response) => {
   const result = await userService.getallUser()
@@ -56,7 +46,6 @@ const updateuser = catchAsync(async (req: Request, res: Response) => {
   })
 })
 const UserController = {
-  createuser,
   getalluser,
   getsingleuser,
   deleteuser,

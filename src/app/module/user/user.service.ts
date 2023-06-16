@@ -3,14 +3,6 @@ import Apierror from '../../errors/handleapiError'
 import { IUser } from './user.interface'
 import user from './user.model'
 
-const createAuser = async (users: IUser): Promise<IUser | null> => {
-  const result = await user.create(users)
-  if (!result) {
-    throw new Apierror(httpStatus.BAD_REQUEST, 'something went wrong')
-  }
-  return result
-}
-
 // get all user
 const getallUser = async (): Promise<IUser[] | null> => {
   const result = await user.find({})
@@ -45,7 +37,6 @@ const updateUser = async (
 }
 
 const userService = {
-  createAuser,
   getallUser,
   getSingleUser,
   deleteUser,
