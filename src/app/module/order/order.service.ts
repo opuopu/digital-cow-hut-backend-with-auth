@@ -49,8 +49,11 @@ const createAorder = async (cowsid: string, buyerid: string) => {
         throw error
       }
     } else {
-      console.log('sorry low budget and sold out')
+      throw new Error(
+        'sorry please increase your budget or the cwo might be sold out'
+      )
     }
+    throw new Error('something went wrong. data not found')
   }
   return neworderdata
 }
