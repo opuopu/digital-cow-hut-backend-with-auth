@@ -1,6 +1,4 @@
-import httpStatus from 'http-status'
 import { Schema, model } from 'mongoose'
-import Apierror from '../../errors/handleapiError'
 import { IUser, UserModel } from './user.interface'
 
 const userSchema = new Schema<IUser, UserModel>({
@@ -42,22 +40,21 @@ const userSchema = new Schema<IUser, UserModel>({
   },
 })
 
-userSchema.pre<IUser>('save', async function (next) {
-  const isExist = await user.aggregate([
-    {
-      $match: {
-        PhoneNumber: this.phoneNumber,
-      },
-    },
-  ])
-  if (isExist.length > 0) {
-    throw new Apierror(
-      httpStatus.CONFLICT,
-      'duplicate entry. please try to add new user'
-    )
-  }
-  next()
-})
+// userSchema.pre<IUser>('save', async function (next) {
+//   const isExist = await user.aggregate([
+//     {
+//       $match: {
+//         PhoneNumber: this.phoneNumber,
+//       },
+//     },
+//   ])
+//   if (isExist.length > 0) {
+//     const error = new mongoose.Error('E11000 duplicate key error');
+//                duplicateError(error);
+
+//   }
+//   next()
+// })
 
 const user = model<IUser, UserModel>('user', userSchema)
 export default user

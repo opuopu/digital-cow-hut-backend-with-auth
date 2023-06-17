@@ -28,15 +28,15 @@ const globalErrorHandler: ErrorRequestHandler = (
     message = simplifiederror.message
     erromessages = simplifiederror.errormessages
   }
-  // else if (error?.code === 11000) {
-  //   const simplifiedError = handleDuplicateKeyError(error)
-  //   statusCode = simplifiedError.statusCode
-  //   message = simplifiedError.message
-  //   erromessages = error.message
+  // else if(error.code ===11000 ){
+  //   const simplifiederror =  duplicateError(error)
+  //   statusCode = simplifiederror?.statusCode
+  //   message = error?.message
+  //   erromessages = error?.message
   //     ? [
   //         {
   //           path: '',
-  //           message: message,
+  //           message: error?.message,
   //         },
   //       ]
   //     : []
