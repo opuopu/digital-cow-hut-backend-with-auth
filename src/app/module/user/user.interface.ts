@@ -1,6 +1,7 @@
-import { Model } from 'mongoose'
+import { Document, Model } from 'mongoose'
 
-export type IUser = {
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+export interface IUser extends Document {
   phoneNumber: number
   role: 'seller' | 'buyer'
   password: string
