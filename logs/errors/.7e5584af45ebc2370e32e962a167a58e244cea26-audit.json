@@ -1,50 +1,50 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 1
+  "keep": {
+    "days": true,
+    "amount": 1
+  },
+  "auditLog": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\.7e5584af45ebc2370e32e962a167a58e244cea26-audit.json",
+  "files": [
+    {
+      "date": 1686921054972,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-19-error.log",
+      "hash": "938fd42e2e00859a26e3f6c90de49a1942a3abdb9b63b7ecbb8d67d9cb4f3b05"
     },
-    "auditLog": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\.7e5584af45ebc2370e32e962a167a58e244cea26-audit.json",
-    "files": [
-        {
-            "date": 1686921054972,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-19-error.log",
-            "hash": "938fd42e2e00859a26e3f6c90de49a1942a3abdb9b63b7ecbb8d67d9cb4f3b05"
-        },
-        {
-            "date": 1686925012316,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-20-error.log",
-            "hash": "84073c074c795aaf5728d4e938a3e48395615bc40808ab4a2ab0183ca2c571e7"
-        },
-        {
-            "date": 1686927653679,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-21-error.log",
-            "hash": "eba64f536ff2986dfcac7cdc2906aad4a0ccad3d1821e1f1f75a2d2050cfe663"
-        },
-        {
-            "date": 1686931245114,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-22-error.log",
-            "hash": "a65e4013c32d0cb24b934b14c6a56dcbc26d87ec7fe41cd95e552aac60df1eab"
-        },
-        {
-            "date": 1686934801044,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-23-error.log",
-            "hash": "f7530414b45477fab73f0b53487a86f3999ac67879f6ff81569be6cb882a9c4e"
-        },
-        {
-            "date": 1686999330846,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-17-16-error.log",
-            "hash": "702c961306e7e569a2aae2a6cddd8e29b0b5714bd35f7af420416bcbe24a3c59"
-        },
-        {
-            "date": 1686999706625,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-17-17-error.log",
-            "hash": "246fc1bc1197d5414d5d1cd887fe94fb23e4d00cfa620d16db8d7497f1ae9f30"
-        },
-        {
-            "date": 1687003241555,
-            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-17-18-error.log",
-            "hash": "50c154572a76a6ba8f163bd4052f919a9b23c7748e474a6d31aafaf6060fe4df"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1686925012316,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-20-error.log",
+      "hash": "84073c074c795aaf5728d4e938a3e48395615bc40808ab4a2ab0183ca2c571e7"
+    },
+    {
+      "date": 1686927653679,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-21-error.log",
+      "hash": "eba64f536ff2986dfcac7cdc2906aad4a0ccad3d1821e1f1f75a2d2050cfe663"
+    },
+    {
+      "date": 1686931245114,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-22-error.log",
+      "hash": "a65e4013c32d0cb24b934b14c6a56dcbc26d87ec7fe41cd95e552aac60df1eab"
+    },
+    {
+      "date": 1686934801044,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-16-23-error.log",
+      "hash": "f7530414b45477fab73f0b53487a86f3999ac67879f6ff81569be6cb882a9c4e"
+    },
+    {
+      "date": 1686999330846,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-17-16-error.log",
+      "hash": "702c961306e7e569a2aae2a6cddd8e29b0b5714bd35f7af420416bcbe24a3c59"
+    },
+    {
+      "date": 1686999706625,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-17-17-error.log",
+      "hash": "246fc1bc1197d5414d5d1cd887fe94fb23e4d00cfa620d16db8d7497f1ae9f30"
+    },
+    {
+      "date": 1687003241555,
+      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\errors\\cow-hut-s-2023-06-17-18-error.log",
+      "hash": "50c154572a76a6ba8f163bd4052f919a9b23c7748e474a6d31aafaf6060fe4df"
+    }
+  ],
+  "hashType": "sha256"
 }

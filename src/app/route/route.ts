@@ -20,7 +20,7 @@ const moduleRoute: any[] = [
     route: cowsRoute,
   },
   {
-    path: '/order',
+    path: '/orders',
     route: orderRoute,
   },
 ]

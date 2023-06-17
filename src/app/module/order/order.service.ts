@@ -3,6 +3,7 @@ import cow from '../cow/cow.model'
 
 import { IUser } from '../user/user.interface'
 import user from '../user/user.model'
+import { IOrder } from './order.interface'
 import { order } from './order.model'
 
 const createAorder = async (cowsid: string, buyerid: string) => {
@@ -54,7 +55,13 @@ const createAorder = async (cowsid: string, buyerid: string) => {
   return neworderdata
 }
 
+//
+const getorders = async (): Promise<IOrder[] | null> => {
+  const result = await order.find({})
+  return result
+}
 const orderservices = {
   createAorder,
+  getorders,
 }
 export default orderservices
