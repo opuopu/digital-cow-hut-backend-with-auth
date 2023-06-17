@@ -3,24 +3,42 @@ import cow from '../cow/cow.model'
 
 import { IUser } from '../user/user.interface'
 import user from '../user/user.model'
+import { order } from './order.model'
 
 const createAorder = async (cowsid: string, buyerid: string) => {
   const cowsdata = await cow.findById(cowsid)
   const buyerdata = await user.findById(buyerid)
   // let errormessage=null
+  let neworderdata = null
   if (buyerdata && cowsdata) {
-    if (buyerdata.budget >= cowsdata.price) {
+    if (buyerdata.budget >= cowsdata.price && cowsdata.label === 'for sale') {
       const session = await mongoose.startSession()
+
       try {
         session.startTransaction()
         await cowsdata.populate('seller')
         const seller = cowsdata.seller as IUser
-        cowsdata.label = 'sold out'
         const lasttotal = buyerdata.budget - cowsdata.price
-        seller.income = lasttotal
-        await seller.save({ session }) // Save changes to the seller object
+        const sellerincome = seller.income + cowsdata.price
 
-        await cowsdata.save({ session }) // Save changes to the cowsdata object
+        await user.updateOne(
+          { _id: buyerid },
+          { $set: { budget: lasttotal } },
+          { session }
+        )
+        await user.updateOne(
+          { _id: seller._id },
+          { $set: { income: sellerincome } },
+          { session }
+        )
+        await cow.updateOne(
+          { _id: cowsid },
+          { $set: { label: 'sold out' } },
+          { session }
+        )
+        neworderdata = await order.create([{ cow: cowsid, buyer: buyerid }], {
+          session,
+        })
 
         await session.commitTransaction()
         await session.endSession()
@@ -29,8 +47,11 @@ const createAorder = async (cowsid: string, buyerid: string) => {
         await session.endSession()
         throw error
       }
+    } else {
+      console.log('sorry low budget and sold out')
     }
   }
+  return neworderdata
 }
 
 const orderservices = {

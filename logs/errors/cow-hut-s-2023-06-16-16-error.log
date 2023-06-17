@@ -1,6 +1,0 @@
-{
-  message: 'failed to connect database',
-  level: 'error',
-  timestamp: '2023-06-16T10:10:59.511Z',
-  label: 'COW'
-}

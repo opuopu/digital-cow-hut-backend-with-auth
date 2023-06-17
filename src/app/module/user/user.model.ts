@@ -6,6 +6,16 @@ const userSchema = new Schema<IUser, UserModel>({
     type: Number,
     required: true,
   },
+  name: {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+  },
   role: {
     type: String,
     enum: ['seller', 'buyer'],
