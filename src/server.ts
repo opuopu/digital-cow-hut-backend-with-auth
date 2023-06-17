@@ -3,7 +3,6 @@ import { Server } from 'http'
 import mongoose from 'mongoose'
 import { app } from './app'
 import config from './config/index'
-import { errorLogger, infoLogger } from './shared/logger'
 
 let server: Server
 
@@ -13,11 +12,11 @@ async function main() {
       `mongodb+srv://${config.dbUserName}:${config.dbPassWord}@cluster0.dgoei.mongodb.net/Cow-hut`
     )
     server = app.listen(config.port, () => {
-      infoLogger.info(`application listening on port ${config.port}`)
+      console.log(`application listening on port ${config.port}`)
     })
-    infoLogger.info('database connected')
+    console.log('database connected')
   } catch (err) {
-    errorLogger.error('failed to connect database')
+    console.log('failed to connect database')
   }
 
   // unhandle rejection error
@@ -25,7 +24,7 @@ async function main() {
     // console.log('server is closed')
     if (server) {
       server.close(() => {
-        errorLogger.error(error)
+        console.log(error)
         process.exit(1)
       })
     }

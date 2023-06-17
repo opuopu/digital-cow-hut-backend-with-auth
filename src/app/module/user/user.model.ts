@@ -1,12 +1,10 @@
-import mongoose, { Schema, model } from 'mongoose'
-import handleDuplicateKeyError from '../../errors/handleduplicateError'
+import { Schema, model } from 'mongoose'
 import { IUser, UserModel } from './user.interface'
 
 const userSchema = new Schema<IUser, UserModel>({
   phoneNumber: {
     type: String,
     required: true,
-    unique: true,
   },
   name: {
     firstName: {
@@ -42,20 +40,20 @@ const userSchema = new Schema<IUser, UserModel>({
   },
 })
 
-userSchema.pre<IUser>('save', async function (next) {
-  const isExist = await user.aggregate([
-    {
-      $match: {
-        PhoneNumber: this.phoneNumber,
-      },
-    },
-  ])
-  if (isExist.length > 0) {
-    const error = new mongoose.Error('')
-    throw handleDuplicateKeyError(error)
-  }
-  next()
-})
+// userSchema.pre<IUser>('save', async function (next) {
+//   const isExist = await user.aggregate([
+//     {
+//       $match: {
+//         PhoneNumber: this.phoneNumber,
+//       },
+//     },
+//   ])
+//   if (isExist.length > 0) {
+//     const error = new mongoose.Error('')
+//     throw handleDuplicateKeyError(error)
+//   }
+//   next()
+// })
 
 const user = model<IUser, UserModel>('user', userSchema)
 export default user

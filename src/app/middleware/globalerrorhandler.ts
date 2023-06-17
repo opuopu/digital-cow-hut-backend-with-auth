@@ -4,7 +4,6 @@ import { IGenericErrorMessage } from '../../interfaces/igenericErrorMessages'
 import Apierror from '../errors/handleapiError'
 import handleCastError from '../errors/handlecastError'
 
-import { default as handleDuplicateKeyError } from '../errors/handleduplicateError'
 import handleValidationError from '../errors/handlevalidation'
 const globalErrorHandler: ErrorRequestHandler = (
   error,
@@ -28,19 +27,21 @@ const globalErrorHandler: ErrorRequestHandler = (
     statusCode = simplifiederror.statusCode
     message = simplifiederror.message
     erromessages = simplifiederror.errormessages
-  } else if (error?.code === 11000) {
-    const simplifiedError = handleDuplicateKeyError(error)
-    statusCode = simplifiedError.statusCode
-    message = simplifiedError.message
-    erromessages = error.message
-      ? [
-          {
-            path: '',
-            message: message,
-          },
-        ]
-      : []
-  } else if (error instanceof Apierror) {
+  }
+  // else if (error?.code === 11000) {
+  //   const simplifiedError = handleDuplicateKeyError(error)
+  //   statusCode = simplifiedError.statusCode
+  //   message = simplifiedError.message
+  //   erromessages = error.message
+  //     ? [
+  //         {
+  //           path: '',
+  //           message: message,
+  //         },
+  //       ]
+  //     : []
+  // }
+  else if (error instanceof Apierror) {
     statusCode = error?.statusCode
     message = error?.message
     erromessages = error?.message
