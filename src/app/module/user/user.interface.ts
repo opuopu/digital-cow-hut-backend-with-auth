@@ -2,7 +2,7 @@ import { Document, Model } from 'mongoose'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 export interface IUser extends Document {
-  phoneNumber: number
+  phoneNumber: string
   role: 'seller' | 'buyer'
   password: string
   name: {

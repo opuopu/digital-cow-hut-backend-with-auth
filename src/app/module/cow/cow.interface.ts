@@ -21,4 +21,10 @@ export type IcowsFilters = {
   location?: string
 }
 
+export type FilterableFields = {
+  searchTerm?: string
+  maxPrice?: string
+  minPrice?: string
+  location?: string
+}
 export type cowModel = Model<ICow, object>

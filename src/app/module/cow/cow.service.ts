@@ -1,8 +1,9 @@
 import httpStatus from 'http-status'
 import { SortOrder } from 'mongoose'
+import { IPaginationOptions } from '../../../interfaces/Ipaginationoptions'
 import calculatePagination from '../../../shared/paginationHelper'
 import Apierror from '../../errors/handleapiError'
-import { ICow } from './cow.interface'
+import { FilterableFields, ICow } from './cow.interface'
 import cow from './cow.model'
 
 const createAcow = async (cows: ICow): Promise<ICow | null> => {
@@ -19,8 +20,8 @@ type meta = {
   limit: number
 }
 const getAllcows = async (
-  filters: any,
-  paginationOptions: any
+  filters: FilterableFields,
+  paginationOptions: IPaginationOptions
 ): Promise<{ meta: meta; data: ICow[] | null }> => {
   const { page, limit, skip, sortOrder, sortBy } =
     calculatePagination(paginationOptions)

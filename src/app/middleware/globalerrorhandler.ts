@@ -1,8 +1,6 @@
 import { ErrorRequestHandler, NextFunction } from 'express'
-import { ZodError } from 'zod'
 import config from '../../config'
 import { IGenericErrorMessage } from '../../interfaces/igenericErrorMessages'
-import handleZodError from '../errors/handleZodError'
 import Apierror from '../errors/handleapiError'
 import handleCastError from '../errors/handlecastError'
 
@@ -34,7 +32,6 @@ const globalErrorHandler: ErrorRequestHandler = (
     const simplifiederror = handleDuplicateKeyError(error)
     statusCode = simplifiederror.statusCode
     message = simplifiederror.message
-    erromessages = simplifiederror.errormessages
   } else if (error instanceof Apierror) {
     statusCode = error?.statusCode
     message = error?.message
@@ -46,11 +43,6 @@ const globalErrorHandler: ErrorRequestHandler = (
           },
         ]
       : []
-  } else if (error instanceof ZodError) {
-    const simplifiederror = handleZodError(error)
-    statusCode = simplifiederror.statusCode
-    message = simplifiederror.message
-    erromessages = simplifiederror.errormessages
   } else if (error instanceof Error) {
     message = error?.message
     erromessages = error?.message
