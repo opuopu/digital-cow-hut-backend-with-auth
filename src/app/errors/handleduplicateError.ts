@@ -1,21 +1,12 @@
-import httpStatus from 'http-status'
 import mongoose from 'mongoose'
 
-function handleDuplicateKeyError(error: mongoose.Error) {
-  const message = error.message
-
-  const statusCode = httpStatus.CONFLICT
+function handleDuplicateKeyError(error: mongoose.Error): any {
   return {
     success: false,
-    statusCode,
-    message: message,
-    errormessages: [
-      {
-        path: '',
-        message: message,
-      },
-    ],
+    statusCode: 409,
+    message: error.message,
     stack: error.stack,
   }
 }
+
 export default handleDuplicateKeyError

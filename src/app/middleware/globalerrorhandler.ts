@@ -29,9 +29,17 @@ const globalErrorHandler: ErrorRequestHandler = (
     message = simplifiederror.message
     erromessages = simplifiederror.errormessages
   } else if (error?.code === 11000) {
-    const simplifiederror = handleDuplicateKeyError(error)
-    statusCode = simplifiederror.statusCode
-    message = simplifiederror.message
+    const simplifiedError = handleDuplicateKeyError(error)
+    statusCode = simplifiedError.statusCode
+    message = simplifiedError.message
+    erromessages = error.message
+      ? [
+          {
+            path: '',
+            message: message,
+          },
+        ]
+      : []
   } else if (error instanceof Apierror) {
     statusCode = error?.statusCode
     message = error?.message

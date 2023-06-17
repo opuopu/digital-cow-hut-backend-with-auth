@@ -1,50 +1,45 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 1
-  },
-  "auditLog": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\.3fea548a261106bc222c9de39aaaeb611bbcde8e-audit.json",
-  "files": [
-    {
-      "date": 1686921054945,
-      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-19-success.log",
-      "hash": "0a0cdceea98e4a29dbbb3728e5416fe7b0432c7e24c384a1465c815a6e97f81b"
+    "keep": {
+        "days": true,
+        "amount": 1
     },
-    {
-      "date": 1686925012299,
-      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-20-success.log",
-      "hash": "c4beb527736817d0c21843b57e452c2c97751408310a75f2ff297519aa0ce34f"
-    },
-    {
-      "date": 1686927653668,
-      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-21-success.log",
-      "hash": "987a416fe38ccdd839af784faff34d65c7436c67c5cb54b6f4154def874b6f0c"
-    },
-    {
-      "date": 1686931245109,
-      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-22-success.log",
-      "hash": "f01e342c052da79a79f91cb37ff27d4a7da374826844b5004a6bc054b300a1c8"
-    },
-    {
-      "date": 1686934801039,
-      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-23-success.log",
-      "hash": "201a369bc23ecec4088cf2bc7fd2944c9e6a0ade5d2fe46857cc2df6022546ec"
-    },
-    {
-      "date": 1686999330831,
-      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-17-16-success.log",
-      "hash": "6db37373d0d78ffeb160922f8c16e8dc35f99732fc18da5ff1d78403b3facad1"
-    },
-    {
-      "date": 1686999706616,
-      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-17-17-success.log",
-      "hash": "6a71851beb4c5280f22ec0e2bf96a429385c123a915b84aec2f4f7c958543e7b"
-    },
-    {
-      "date": 1687003241550,
-      "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-17-18-success.log",
-      "hash": "335f0d41bbb1250cb5c7e01fdc0151c0b4ef525bb1bc2cdd5245f0ebf25bd023"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\.3fea548a261106bc222c9de39aaaeb611bbcde8e-audit.json",
+    "files": [
+        {
+            "date": 1686931245109,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-22-success.log",
+            "hash": "f01e342c052da79a79f91cb37ff27d4a7da374826844b5004a6bc054b300a1c8"
+        },
+        {
+            "date": 1686934801039,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-16-23-success.log",
+            "hash": "201a369bc23ecec4088cf2bc7fd2944c9e6a0ade5d2fe46857cc2df6022546ec"
+        },
+        {
+            "date": 1686999330831,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-17-16-success.log",
+            "hash": "6db37373d0d78ffeb160922f8c16e8dc35f99732fc18da5ff1d78403b3facad1"
+        },
+        {
+            "date": 1686999706616,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-17-17-success.log",
+            "hash": "6a71851beb4c5280f22ec0e2bf96a429385c123a915b84aec2f4f7c958543e7b"
+        },
+        {
+            "date": 1687003241550,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-17-18-success.log",
+            "hash": "335f0d41bbb1250cb5c7e01fdc0151c0b4ef525bb1bc2cdd5245f0ebf25bd023"
+        },
+        {
+            "date": 1687013295464,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-17-20-success.log",
+            "hash": "875c769b6ec0360a48aeab3da3b19b34f22a3607c4837034c5130bdbfeddf433"
+        },
+        {
+            "date": 1687014118239,
+            "name": "D:\\web-2\\assignment\\digital-cow-hut\\logs\\success\\cow-hut-s-2023-06-17-21-success.log",
+            "hash": "1564805377a2f7e59a7e3595fff02b817b651ff3c629344cad3684c833d538f5"
+        }
+    ],
+    "hashType": "sha256"
 }
