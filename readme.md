@@ -3,11 +3,11 @@
 
 ## Application Routes:
 ## User
-api/v1/auth/signup (POST)
-api/v1/users (GET)
-api/v1/users/648ea844cd303104c670f585 (Single GET) Include an id that is saved in your database
-api/v1/users/648ea844cd303104c670f585 (PATCH)
-api/v1/users/648ea874cd303104c670f587 (DELETE) Include an id that is saved in your database
+api/v1/auth/signup (POST)  <br/>
+api/v1/users (GET) <br/>
+api/v1/users/648ea844cd303104c670f585 (Single GET)  <br/>
+api/v1/users/648ea844cd303104c670f585 (PATCH) <br/>
+api/v1/users/648ea874cd303104c670f587 (DELETE) <br/>
 ## Cows
 api/v1/cows (POST)
 api/v1/cows (GET)
