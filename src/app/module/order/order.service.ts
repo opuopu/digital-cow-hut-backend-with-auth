@@ -11,8 +11,8 @@ const createAorder = async (cowsid: string, buyerid: string) => {
   const buyerdata = await user.findById(buyerid)
   // let errormessage=null
   let neworderdata = null
-  if (buyerdata && cowsdata) {
-    if (buyerdata.budget >= cowsdata.price && cowsdata.label === 'for sale') {
+  if (buyerdata && cowsdata && cowsdata.label === 'for sale') {
+    if (buyerdata.budget >= cowsdata.price) {
       const session = await mongoose.startSession()
 
       try {
@@ -53,8 +53,10 @@ const createAorder = async (cowsid: string, buyerid: string) => {
         'sorry please increase your budget or the cwo might be sold out'
       )
     }
+  } else {
     throw new Error('something went wrong. data not found')
   }
+
   return neworderdata
 }
 

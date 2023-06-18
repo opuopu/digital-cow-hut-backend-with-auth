@@ -43,6 +43,7 @@ const getAllcows = async (
     filter.location = { $regex: fields.location, $options: 'i' }
   }
 
+  // pagination
   const sort: { [key: string]: SortOrder } = {}
   if (sortBy && sortOrder) {
     sort[sortBy] = sortOrder

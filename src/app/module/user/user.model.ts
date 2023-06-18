@@ -5,6 +5,7 @@ const userSchema = new Schema<IUser, UserModel>({
   phoneNumber: {
     type: String,
     required: true,
+    unique: true,
   },
   name: {
     firstName: {
