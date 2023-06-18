@@ -62,7 +62,7 @@ const createAorder = async (cowsid: string, buyerid: string) => {
 
 //
 const getorders = async (): Promise<IOrder[] | null> => {
-  const result = await order.find({})
+  const result = await order.find().populate('cow buyer')
   return result
 }
 const orderservices = {

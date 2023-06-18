@@ -73,6 +73,8 @@ const getAllcows = async (
   }
 }
 
+// cheek
+
 //   get single cows
 const getSinglCow = async (id: string): Promise<ICow | null> => {
   const result = await cow.findById({ _id: id }).populate('seller')

@@ -41,21 +41,5 @@ const userSchema = new Schema<IUser, UserModel>({
   },
 })
 
-// userSchema.pre<IUser>('save', async function (next) {
-//   const isExist = await user.aggregate([
-//     {
-//       $match: {
-//         PhoneNumber: this.phoneNumber,
-//       },
-//     },
-//   ])
-//   if (isExist.length > 0) {
-//     const error = new mongoose.Error('E11000 duplicate key error');
-//                duplicateError(error);
-
-//   }
-//   next()
-// })
-
 const user = model<IUser, UserModel>('user', userSchema)
 export default user

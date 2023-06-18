@@ -2,7 +2,6 @@ import { Request, Response } from 'express'
 import catchAsync from '../../../shared/catchasync'
 import pick from '../../../shared/pick'
 import { filterableField, items } from './cow.constant'
-import { FilterableFields } from './cow.interface'
 import cowsService from './cow.service'
 
 const createcow = catchAsync(async (req: Request, res: Response) => {
@@ -28,8 +27,21 @@ const getsinglecow = catchAsync(async (req: Request, res: Response) => {
 //   get all
 // steps 1. create a pick function for query req.query
 // step 2 calculatte sorting and paginations options using calculatepagination
+// const getallcows = catchAsync(async (req: Request, res: Response) => {
+//   const filters: FilterableFields = pick(req.query, filterableField)
+
+//   const paginationOptions = pick(req.query, items)
+//   const result = await cowsService.getAllcows(filters, paginationOptions)
+//   res.send({
+//     success: true,
+//     statusCode: 200,
+//     meta: result.meta,
+//     message: 'cows retrieved  successfully',
+//     data: result.data,
+//   })
+// })
 const getallcows = catchAsync(async (req: Request, res: Response) => {
-  const filters: FilterableFields = pick(req.query, filterableField)
+  const filters = pick(req.query, filterableField)
 
   const paginationOptions = pick(req.query, items)
   const result = await cowsService.getAllcows(filters, paginationOptions)
