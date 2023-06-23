@@ -41,7 +41,7 @@ adminSchema.methods.isUserExist = async function (
 ): Promise<Pick<IAdmin, 'phoneNumber' | 'password' | 'role'> | null> {
   const isUserExist = await admin.findOne(
     { phoneNumber },
-    { _id: 1, password: 1, role: 1, phoneNumber: 1 }
+    { password: 1, role: 1, phoneNumber: 1 }
   )
 
   return isUserExist
