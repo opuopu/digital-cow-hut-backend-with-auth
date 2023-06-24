@@ -1,4 +1,5 @@
 import httpStatus from 'http-status'
+import { JwtPayload } from 'jsonwebtoken'
 import Apierror from '../../errors/handleapiError'
 import { IUser } from './user.interface'
 import user from './user.model'
@@ -38,10 +39,31 @@ const updateUser = async (
 
 // login a user
 
+// get profile
+const getmyprofile = async (users: any): Promise<IUser | null> => {
+  const { id } = users
+  console.log(id)
+  const result = await user.findOne({ _id: id })
+  return result
+}
+// updateProfile
+const updateprofile = async (
+  users: JwtPayload,
+  payload: Partial<IUser>
+): Promise<IUser | null> => {
+  const { id } = users
+  const result = await user.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  })
+  return result
+}
+
 const userService = {
   getallUser,
   getSingleUser,
   deleteUser,
   updateUser,
+  getmyprofile,
+  updateprofile,
 }
 export default userService

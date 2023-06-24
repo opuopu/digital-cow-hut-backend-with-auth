@@ -47,12 +47,36 @@ const updateuser = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
-// loginadmin
+// loginuser
+
+// get profile
+const getMyProfile = catchAsync(async (req: Request, res: Response) => {
+  const result = await userService.getmyprofile(req.user)
+  res.send({
+    success: true,
+    statusCode: 200,
+    message: 'Users information retrieved successfully',
+    data: result,
+  })
+})
+
+// update profile
+const updateMyProfile = catchAsync(async (req: Request, res: Response) => {
+  const result = await userService.updateprofile(req.user, req.body)
+  res.send({
+    success: true,
+    statusCode: 200,
+    message: 'User information updated ',
+    data: result,
+  })
+})
 
 const UserController = {
   getalluser,
   getsingleuser,
   deleteuser,
   updateuser,
+  getMyProfile,
+  updateMyProfile,
 }
 export default UserController

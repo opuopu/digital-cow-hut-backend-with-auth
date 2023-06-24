@@ -6,6 +6,16 @@ import UserController from './user.controller'
 
 const router = express.Router()
 
+router.get(
+  '/my-profile',
+  auth(ENUM_USER_ROLE.SELLER, ENUM_USER_ROLE.BUYER),
+  UserController.getMyProfile
+)
+router.patch(
+  '/my-profile',
+  auth(ENUM_USER_ROLE.SELLER, ENUM_USER_ROLE.BUYER),
+  UserController.updateMyProfile
+)
 router.get('/', auth(ENUM_USER_ROLE.ADMIN), UserController.getalluser)
 router.get('/:id', auth(ENUM_USER_ROLE.ADMIN), UserController.getsingleuser)
 router.delete('/:id', auth(ENUM_USER_ROLE.ADMIN), UserController.deleteuser)
