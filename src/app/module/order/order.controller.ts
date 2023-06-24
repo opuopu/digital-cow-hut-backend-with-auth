@@ -14,7 +14,9 @@ const createorder = catchAsync(async (req: Request, res: Response) => {
 
 // get
 const getorder = catchAsync(async (req: Request, res: Response) => {
-  const result = await orderservices.getorders()
+  const user = req.user
+  const result = await orderservices.getorders(user)
+
   res.send({
     success: true,
     statusCode: 200,
