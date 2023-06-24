@@ -4,6 +4,7 @@ import userService from './user.service'
 
 // get all
 const getalluser = catchAsync(async (req: Request, res: Response) => {
+  console.log(req.headers.authorization)
   const result = await userService.getallUser()
   res.send({
     success: true,

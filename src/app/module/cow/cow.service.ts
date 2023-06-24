@@ -84,8 +84,17 @@ const getSinglCow = async (id: string): Promise<ICow | null> => {
 //   patch cow
 const updateCow = async (
   id: string,
-  payload: Partial<ICow>
+  payload: Partial<ICow>,
+  user: any
 ): Promise<ICow | null> => {
+  const cows = await cow.findOne({ _id: id, seller: user.id })
+
+  if (!cows) {
+    throw new Apierror(
+      httpStatus.UNAUTHORIZED,
+      'Cow not found or unauthorized access'
+    )
+  }
   const result = await cow
     .findOneAndUpdate({ _id: id }, payload, {
       new: true,
@@ -95,7 +104,15 @@ const updateCow = async (
 }
 
 //   delete
-const deleteCow = async (id: string): Promise<ICow | null> => {
+const deleteCow = async (id: string, user: any): Promise<ICow | null> => {
+  const cows = await cow.findOne({ _id: id, seller: user.id })
+
+  if (!cows) {
+    throw new Apierror(
+      httpStatus.UNAUTHORIZED,
+      'Cow not found or unauthorized access'
+    )
+  }
   const result = await cow.findOneAndDelete({ _id: id })
   return result
 }

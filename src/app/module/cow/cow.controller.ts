@@ -56,7 +56,8 @@ const getallcows = catchAsync(async (req: Request, res: Response) => {
 
 // delete user
 const deletecow = catchAsync(async (req: Request, res: Response) => {
-  const result = await cowsService.deleteCow(req.params.id)
+  const user = req.user
+  const result = await cowsService.deleteCow(req.params.id, user)
   res.send({
     success: true,
     statusCode: 200,
@@ -67,7 +68,9 @@ const deletecow = catchAsync(async (req: Request, res: Response) => {
 
 // update
 const updatecow = catchAsync(async (req: Request, res: Response) => {
-  const result = await cowsService.updateCow(req.params.id, req.body)
+  const user = req.user
+
+  const result = await cowsService.updateCow(req.params.id, req.body, user)
   res.send({
     success: true,
     statusCode: 200,
