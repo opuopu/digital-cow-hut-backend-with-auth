@@ -36,6 +36,8 @@ const updateUser = async (
   return result
 }
 
+// login a user
+
 const userService = {
   getallUser,
   getSingleUser,

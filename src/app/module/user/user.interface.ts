@@ -14,4 +14,19 @@ export interface IUser extends Document {
   budget: number
   income: number
 }
-export type UserModel = Model<IUser, object>
+
+export type IUserMethods = {
+  isUserExist(
+    phoneNumber: string
+  ): Promise<Pick<IUser, 'phoneNumber' | 'password' | 'role'> | null>
+  isPassWordMatched(
+    givenPassword: string,
+    savedPassword: string
+  ): Promise<boolean>
+}
+
+export type ILoginuser = {
+  phoneNumber: string
+  password: string
+}
+export type UserModel = Model<IUser, object, IUserMethods>

@@ -45,6 +45,9 @@ const updateuser = catchAsync(async (req: Request, res: Response) => {
     data: result,
   })
 })
+
+// loginadmin
+
 const UserController = {
   getalluser,
   getsingleuser,

@@ -9,7 +9,7 @@ const router = express.Router()
 
 const moduleRoute: any[] = [
   {
-    path: '/auth/signup',
+    path: '/auth',
     route: AuthRoute,
   },
   {
