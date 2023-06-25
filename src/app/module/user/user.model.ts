@@ -25,6 +25,7 @@ const userSchema = new Schema<IUser, UserModel, IUserMethods>({
   password: {
     type: String,
     required: true,
+    select: false,
   },
   address: {
     type: String,

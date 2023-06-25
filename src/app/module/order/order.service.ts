@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 import cow from '../cow/cow.model'
 
+import httpStatus from 'http-status'
+import Apierror from '../../errors/handleapiError'
 import { ICow } from '../cow/cow.interface'
 import { IUser } from '../user/user.interface'
 import User from '../user/user.model'
@@ -61,25 +63,108 @@ const createAorder = async (cowsid: string, buyerid: string) => {
   return neworderdata
 }
 
-//
 const getorders = async (user: any): Promise<IOrder[] | null> => {
   const { role, id } = user
   let result = null
   if (role === 'admin') {
-    result = await order.find({}).populate('cow buyer')
+    result = await order
+      .find({})
+      .populate({
+        path: 'cow',
+        populate: {
+          path: 'seller',
+        },
+      })
+      .populate('buyer')
   } else if (role === 'buyer') {
-    result = await order.find({ buyer: id }).populate('cow buyer')
+    result = await order
+      .find({ buyer: id })
+      .populate({
+        path: 'cow',
+        populate: {
+          path: 'seller',
+        },
+      })
+      .populate('buyer')
   } else if (role === 'seller') {
-    const orders = await order.find().populate('cow buyer')
+    const orders = await order
+      .find()
+      .populate({
+        path: 'cow',
+        populate: {
+          path: 'seller',
+        },
+      })
+      .populate('buyer')
     result = orders.filter(
-      order => (order.cow as ICow).seller.toString() === id
+      order => (order.cow as ICow).seller._id.toString() === id
+    )
+  } else {
+    throw new Apierror(
+      httpStatus.NOT_FOUND,
+      'something went wrong. orders not found'
     )
   }
 
   return result
 }
+const getsingleorder = async (
+  ids: string,
+  user: any
+): Promise<IOrder | null> => {
+  const { role, id } = user
+  let result: IOrder | null = null
+
+  if (role === 'admin') {
+    result = await order
+      .findById(ids)
+      .populate({
+        path: 'cow',
+        populate: {
+          path: 'seller',
+          model: 'user',
+        },
+      })
+      .populate('buyer')
+  } else if (role === 'buyer') {
+    result = await order
+      .findOne({ _id: ids, buyer: id })
+      .populate({
+        path: 'cow',
+        populate: {
+          path: 'seller',
+          model: 'user',
+        },
+      })
+      .populate('buyer')
+  } else if (role === 'seller') {
+    const orders = await order
+      .findOne({ _id: ids })
+      .populate('buyer')
+      .populate({
+        path: 'cow',
+        populate: {
+          path: 'seller',
+          model: 'user',
+        },
+      })
+
+    if (orders && (orders.cow as ICow).seller._id.toString() === id) {
+      result = orders
+    }
+  } else {
+    throw new Apierror(
+      httpStatus.FORBIDDEN,
+      'Access denied. Unauthorized role.'
+    )
+  }
+
+  return result
+}
+
 const orderservices = {
   createAorder,
   getorders,
+  getsingleorder,
 }
 export default orderservices

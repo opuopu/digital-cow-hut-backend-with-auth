@@ -17,7 +17,7 @@ app.use('/api/v1', router)
 
 app.get('/', async (req, res) => {
   // res.send('database connected')
-  console.log('cookies', req.cookies)
+
   res.send('server is working perfectly ')
 })
 

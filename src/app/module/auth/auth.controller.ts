@@ -24,7 +24,7 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
   res.send({
     success: true,
     statusCode: 200,
-    message: 'Admin login successfully',
+    message: 'user login successfully',
     data: others,
   })
 })
