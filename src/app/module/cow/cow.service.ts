@@ -7,7 +7,7 @@ import { FilterableFields, ICow } from './cow.interface'
 import cow from './cow.model'
 
 const createAcow = async (cows: ICow): Promise<ICow | null> => {
-  const result = await cow.create(cows)
+  const result = (await cow.create(cows)).populate('seller')
   if (!result) {
     throw new Apierror(httpStatus.BAD_REQUEST, 'something went wrong')
   }
@@ -26,7 +26,7 @@ const getAllcows = async (
   const { page, limit, skip, sortOrder, sortBy } =
     calculatePagination(paginationOptions)
   const filter: any = {}
-  console.log(filters)
+
   const { searchTerm, ...fields } = filters
 
   if (fields.minPrice) {

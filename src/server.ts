@@ -9,7 +9,7 @@ let server: Server
 async function main() {
   try {
     await mongoose.connect(
-      `mongodb+srv://${config.dbUserName}:${config.dbPassWord}@cluster0.dgoei.mongodb.net/Cow-hut`
+      `mongodb+srv://${config.dbUserName}:${config.dbPassWord}@cluster0.dgoei.mongodb.net/Cow-bajar`
     )
     server = app.listen(config.port, () => {
       console.log(`application listening on port ${config.port}`)

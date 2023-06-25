@@ -43,6 +43,7 @@ const createAorder = async (cowsid: string, buyerid: string) => {
         neworderdata = await order.create([{ cow: cowsid, buyer: buyerid }], {
           session,
         })
+        neworderdata = await neworderdata[0].populate('cow buyer')
 
         await session.commitTransaction()
         await session.endSession()
