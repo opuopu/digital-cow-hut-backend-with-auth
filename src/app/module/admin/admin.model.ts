@@ -3,38 +3,50 @@ import { AdminModel, IAdmin, IAdminMethods } from './admin.interface'
 
 import bcrypt from 'bcrypt'
 import config from '../../../config'
-const adminSchema = new Schema<IAdmin, IAdminMethods, AdminModel>({
-  phoneNumber: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  role: {
-    type: String,
-    enum: ['admin'],
-    default: 'admin',
-  },
+const adminSchema = new Schema<IAdmin, IAdminMethods, AdminModel>(
+  {
+    phoneNumber: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    role: {
+      type: String,
+      enum: ['admin'],
+      default: 'admin',
+    },
 
-  password: {
-    type: String,
-    required: true,
-    select: 0,
-  },
-  name: {
-    firstName: {
+    password: {
+      type: String,
+      required: true,
+      select: 0,
+    },
+    name: {
+      firstName: {
+        type: String,
+        required: true,
+      },
+      lastName: {
+        type: String,
+        required: true,
+      },
+    },
+    address: {
       type: String,
       required: true,
     },
-    lastName: {
-      type: String,
-      required: true,
+  },
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: function (_doc, ret) {
+        delete ret.password
+        return ret
+      },
     },
-  },
-  address: {
-    type: String,
-    required: true,
-  },
-})
+  }
+)
 
 adminSchema.methods.isUserExist = async function (
   phoneNumber: string

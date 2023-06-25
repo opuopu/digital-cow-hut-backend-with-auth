@@ -2,46 +2,58 @@ import bcrypt from 'bcrypt'
 import { Schema, model } from 'mongoose'
 import config from '../../../config'
 import { IUser, IUserMethods, UserModel } from './user.interface'
-const userSchema = new Schema<IUser, UserModel, IUserMethods>({
-  phoneNumber: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  name: {
-    firstName: {
+const userSchema = new Schema<IUser, UserModel, IUserMethods>(
+  {
+    phoneNumber: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    name: {
+      firstName: {
+        type: String,
+        required: true,
+      },
+      lastName: {
+        type: String,
+        required: true,
+      },
+    },
+    role: {
+      type: String,
+      enum: ['seller', 'buyer'],
+    },
+    password: {
+      type: String,
+      required: true,
+      select: 0,
+    },
+    address: {
       type: String,
       required: true,
     },
-    lastName: {
-      type: String,
+    budget: {
+      type: Number,
       required: true,
+      default: 0,
+    },
+    income: {
+      type: Number,
+      required: true,
+      default: 0,
     },
   },
-  role: {
-    type: String,
-    enum: ['seller', 'buyer'],
-  },
-  password: {
-    type: String,
-    required: true,
-    select: false,
-  },
-  address: {
-    type: String,
-    required: true,
-  },
-  budget: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-  income: {
-    type: Number,
-    required: true,
-    default: 0,
-  },
-})
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: function (_doc, ret) {
+        delete ret.password
+        return ret
+      },
+    },
+  }
+)
 
 userSchema.methods.isUserExist = async function (
   phoneNumber: string

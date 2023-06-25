@@ -1,9 +1,10 @@
+import bcrypt from 'bcrypt'
 import httpStatus from 'http-status'
 import { JwtPayload } from 'jsonwebtoken'
+import config from '../../../config'
 import Apierror from '../../errors/handleapiError'
 import { IUser } from './user.interface'
 import user from './user.model'
-
 // get all user
 const getallUser = async (): Promise<IUser[] | null> => {
   const result = await user.find({})
@@ -42,8 +43,11 @@ const updateUser = async (
 // get profile
 const getmyprofile = async (users: any): Promise<IUser | null> => {
   const { id } = users
-  console.log(id)
+
   const result = await user.findOne({ _id: id })
+  if (!result) {
+    throw new Apierror(httpStatus.NOT_FOUND, 'user not found')
+  }
   return result
 }
 // updateProfile
@@ -52,9 +56,20 @@ const updateprofile = async (
   payload: Partial<IUser>
 ): Promise<IUser | null> => {
   const { id } = users
+
+  if (payload.password) {
+    const hasspassword = await bcrypt.hash(
+      payload.password,
+      Number(config.bcrypt_salt_round)
+    )
+    payload.password = hasspassword
+  }
   const result = await user.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   })
+  if (!result) {
+    throw new Apierror(404, 'something went wrong')
+  }
   return result
 }
 
