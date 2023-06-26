@@ -1,4 +1,5 @@
 import httpStatus from 'http-status'
+import { JwtPayload } from 'jsonwebtoken'
 import { SortOrder } from 'mongoose'
 import { IPaginationOptions } from '../../../interfaces/Ipaginationoptions'
 import calculatePagination from '../../../shared/paginationHelper'
@@ -6,7 +7,17 @@ import Apierror from '../../errors/handleapiError'
 import { FilterableFields, ICow } from './cow.interface'
 import cow from './cow.model'
 
-const createAcow = async (cows: ICow): Promise<ICow | null> => {
+const createAcow = async (
+  cows: ICow,
+  user: JwtPayload
+): Promise<ICow | null> => {
+  const { id } = user
+  if (id !== cows.seller) {
+    throw new Apierror(
+      httpStatus.UNAUTHORIZED,
+      "cows not created,please give your valid id in seller property's"
+    )
+  }
   const result = (await cow.create(cows)).populate('seller')
   if (!result) {
     throw new Apierror(httpStatus.BAD_REQUEST, 'something went wrong')
@@ -85,7 +96,7 @@ const getSinglCow = async (id: string): Promise<ICow | null> => {
 const updateCow = async (
   id: string,
   payload: Partial<ICow>,
-  user: any
+  user: JwtPayload
 ): Promise<ICow | null> => {
   const cows = await cow.findOne({ _id: id, seller: user.id })
 

@@ -23,7 +23,7 @@ const createAorder = async (
   if (buyerid !== id) {
     throw new Apierror(
       httpStatus.UNAUTHORIZED,
-      'unauthorized access please give your valid id'
+      'unauthorized access, please give your valid id'
     )
   }
 

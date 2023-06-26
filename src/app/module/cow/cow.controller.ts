@@ -5,7 +5,7 @@ import { filterableField, items } from './cow.constant'
 import cowsService from './cow.service'
 
 const createcow = catchAsync(async (req: Request, res: Response) => {
-  const result = await cowsService.createAcow(req.body)
+  const result = await cowsService.createAcow(req.body, req.user)
   res.send({
     success: true,
     statusCode: 200,
