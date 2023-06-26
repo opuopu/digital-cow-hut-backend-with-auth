@@ -8,6 +8,7 @@ const createorder = catchAsync(async (req: Request, res: Response) => {
 
   res.send({
     success: true,
+    message: 'Orders created successfully',
     data: result,
   })
 })

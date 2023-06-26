@@ -43,7 +43,10 @@ const createAorder = async (cowsid: string, buyerid: string) => {
         neworderdata = await order.create([{ cow: cowsid, buyer: buyerid }], {
           session,
         })
-        neworderdata = await neworderdata[0].populate('cow buyer')
+        if (neworderdata && neworderdata.length > 0) {
+          neworderdata[0].cow = cowsdata
+          neworderdata[0].buyer = buyerdata
+        }
 
         await session.commitTransaction()
         await session.endSession()
@@ -53,12 +56,12 @@ const createAorder = async (cowsid: string, buyerid: string) => {
         throw error
       }
     } else {
-      throw new Error(
-        'sorry please increase your budget or the cwo might be sold out'
-      )
+      throw new Error('sorry please increase your budget.')
     }
   } else {
-    throw new Error('something went wrong. data not found')
+    throw new Error(
+      'something went wrong. data not found,the cow might be sold out'
+    )
   }
 
   return neworderdata
