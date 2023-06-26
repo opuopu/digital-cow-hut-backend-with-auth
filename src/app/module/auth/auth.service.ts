@@ -19,15 +19,15 @@ const loginuser = async (payload: ILoginuser) => {
   const users = new user()
   const isUserExist = await users.isUserExist(phoneNumber)
   if (!isUserExist) {
-    throw new Apierror(httpStatus.NOT_FOUND, 'admin not found')
+    throw new Apierror(httpStatus.NOT_FOUND, 'user not found')
   }
   const { role } = isUserExist
-  const ispasswordMatched = users.isPassWordMatched(
-    password,
-    isUserExist.password
-  )
-  if (!ispasswordMatched) {
-    throw new Apierror(httpStatus.UNAUTHORIZED, 'password is incorrect')
+
+  if (
+    isUserExist.password &&
+    !(await users.isPassWordMatched(password, isUserExist.password))
+  ) {
+    throw new Apierror(httpStatus.UNAUTHORIZED, 'Password is incorrect')
   }
   const getuser = await user.findOne({ phoneNumber: phoneNumber }, { _id: 1 })
   if (!getuser) {
