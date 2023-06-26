@@ -23,20 +23,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_1 = __importDefault(require("../../../config"));
+exports.adminController = void 0;
 const catchasync_1 = __importDefault(require("../../../shared/catchasync"));
-const auth_service_1 = __importDefault(require("./auth.service"));
-const createauthUser = (0, catchasync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield auth_service_1.default.createAuthUser(req.body);
+const config_1 = __importDefault(require("../../../config"));
+const admin_service_1 = __importDefault(require("./admin.service"));
+const createAdmin = (0, catchasync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield admin_service_1.default.createadmin(req.body);
     res.send({
         success: true,
         statusCode: 200,
-        message: 'Users created successfully',
+        message: 'Admin created successfully',
         data: result,
     });
 }));
-const loginUser = (0, catchasync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield auth_service_1.default.loginuser(req.body);
+const loginAdmin = (0, catchasync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield admin_service_1.default.loginadmin(req.body);
     const { refreshToken } = result, others = __rest(result, ["refreshToken"]);
     const cookieOptions = {
         secure: config_1.default.env === 'production',
@@ -46,29 +47,11 @@ const loginUser = (0, catchasync_1.default)((req, res) => __awaiter(void 0, void
     res.send({
         success: true,
         statusCode: 200,
-        message: 'user login successfully',
+        message: 'Admin login successfully',
         data: others,
     });
 }));
-// refresh Token
-const refreshToken = (0, catchasync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { refreshToken } = req.cookies;
-    const result = yield auth_service_1.default.refreshToken(refreshToken);
-    const cookieOptions = {
-        secure: config_1.default.env === 'production' ? true : false,
-        httpOnly: true,
-    };
-    res.cookie('refreshToken', refreshToken, cookieOptions);
-    res.send({
-        statusCode: 200,
-        success: true,
-        message: 'User login Successfully',
-        data: result,
-    });
-}));
-const authcontroller = {
-    createauthUser,
-    loginUser,
-    refreshToken,
+exports.adminController = {
+    createAdmin,
+    loginAdmin,
 };
-exports.default = authcontroller;

@@ -9,7 +9,7 @@ const auth =
   (...roles: string[]) =>
   async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const token = req.cookies.refreshToken
+      const token = req.headers.authorization
       if (!token) {
         throw new Apierror(httpStatus.UNAUTHORIZED, 'you are not authorized')
       }
