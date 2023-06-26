@@ -56,15 +56,24 @@ const updateprofile = async (
   payload: Partial<IUser>
 ): Promise<IUser | null> => {
   const { id } = users
-
+  const { name, ...others } = payload
+  const updatedUserData: Partial<IUser> = { ...others }
   if (payload.password) {
     const hasspassword = await bcrypt.hash(
       payload.password,
       Number(config.bcrypt_salt_round)
     )
-    payload.password = hasspassword
+    updatedUserData.password = hasspassword
   }
-  const result = await user.findOneAndUpdate({ _id: id }, payload, {
+  // dynamic update
+  if (name && Object.keys(name).length) {
+    Object.entries(name).forEach(([key, value]) => {
+      const newNameKey = `name.${key}`
+      ;(updatedUserData as any)[newNameKey] = value
+    })
+  }
+
+  const result = await user.findOneAndUpdate({ _id: id }, updatedUserData, {
     new: true,
   })
   if (!result) {
