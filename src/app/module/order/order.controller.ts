@@ -4,7 +4,7 @@ import orderservices from './order.service'
 
 const createorder = catchAsync(async (req: Request, res: Response) => {
   const { cow, buyer } = req.body
-  const result = await orderservices.createAorder(cow, buyer)
+  const result = await orderservices.createAorder(cow, buyer, req.user)
 
   res.send({
     success: true,
