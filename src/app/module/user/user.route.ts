@@ -13,6 +13,7 @@ router.get(
 )
 router.patch(
   '/my-profile',
+
   auth(ENUM_USER_ROLE.SELLER, ENUM_USER_ROLE.BUYER),
   UserController.updateMyProfile
 )
