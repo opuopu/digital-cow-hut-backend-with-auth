@@ -1,3 +1,15 @@
+## Digital Cow Hut Backend Summary
+Welcome to the Digital Cow Hut backend! This robust and feature-rich backend system is built using cutting-edge technologies like Mongoose, TypeScript, and JWT for secure authentication. The system offers seamless user management, enabling registration, login, and token issuance for verification. Leveraging JWT tokens, we've implemented role-based access control, allowing admins, buyers, and sellers to perform distinct actions.
+
+Our platform includes dedicated routes for different roles, enabling admins to manage cows comprehensively, buyers to purchase cows, and sellers to list and sell their livestock. Transactions are smoothly tracked in the order database, ensuring a transparent record of each purchase. Moreover, admins can create new admin accounts effortlessly, enhancing user management capabilities.
+
+Users can conveniently access and update their profile information via dedicated routes. Our coding standards are top-notch, employing tools like ESLint, Prettier, and Lint Stage for clean, consistent, and efficient code. To streamline the user experience, we've implemented robust error handling mechanisms, providing a smoother journey through the system.
+
+Experience the power of our meticulously designed backend, making the Digital Cow Hut a secure, efficient, and user-centric platform for all things bovine.
+
+
+
+
 ## Live Link: https://digital-cow-hut-auth-eta.vercel.app/
 
 
